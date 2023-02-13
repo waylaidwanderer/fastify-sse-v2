@@ -47,5 +47,5 @@ function handleAsyncIterable(
   reply: FastifyReply,
   source: AsyncIterable<EventMessage>
 ): void {
-  toStream(transformAsyncIterable(source)).pipe(reply.raw);
+  toStream(transformAsyncIterable(source)).setMaxListeners(100).pipe(reply.raw);
 }
