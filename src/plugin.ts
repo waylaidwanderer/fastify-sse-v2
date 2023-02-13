@@ -19,6 +19,7 @@ export const plugin: FastifyPluginAsync<SsePluginOptions> = async function (
       //if this already set, it's not first event
       if (!this.raw.headersSent) {
         this.sseContext = { source: pushable<EventMessage>() };
+        this.raw.setMaxListeners(Infinity);
         Object.entries(this.getHeaders()).forEach(([key, value]) => {
           this.raw.setHeader(key, value ?? "");
         });
@@ -47,5 +48,7 @@ function handleAsyncIterable(
   reply: FastifyReply,
   source: AsyncIterable<EventMessage>
 ): void {
-  toStream(transformAsyncIterable(source)).setMaxListeners(100).pipe(reply.raw);
+  toStream(transformAsyncIterable(source))
+    .setMaxListeners(Infinity)
+    .pipe(reply.raw);
 }
