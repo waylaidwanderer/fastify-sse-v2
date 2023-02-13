@@ -1,5 +1,5 @@
 {
-    "name": "fastify-sse-v2",
+    "name": "@waylaidwanderer/fastify-sse-v2",
     "version": "3.0.0",
     "description": "Fastify plugin for sending server side events.",
     "main": "lib/index.js",
@@ -19,14 +19,11 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/nodefactoryio/fastify-sse-v2.git"
+        "url": "git+https://github.com/waylaidwanderer/fastify-sse-v2.git"
     },
     "author": "Marin Petrunić <marin@nodefactory.io>",
     "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/nodefactoryio/fastify-sse-v2/issues"
-    },
-    "homepage": "https://github.com/nodefactoryio/fastify-sse-v2#readme",
+    "homepage": "https://github.com/waylaidwanderer/fastify-sse-v2#readme",
     "devDependencies": {
         "@chainsafe/eslint-config": "^1.1.0",
         "@rushstack/eslint-patch": "^1.2.0",
